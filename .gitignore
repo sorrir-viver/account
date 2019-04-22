@@ -1,0 +1,12 @@
+/doc/*/
+/doc/*.*
+!/doc/.gitkeep
+/node_modules/
+*.log
+package-lock.json
+.vscode/tasks.json
+/.vscode/*.*
+/.serverless/*.*
+www/**
+.vscode/**
+..serverless/**
