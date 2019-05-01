@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect, HashRouter } from 'react-router-dom';
 
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
@@ -52,10 +52,10 @@ const NotFound = () => (
 const Routes = () => (
   // replicação para a validação do estado atual para token + user
   <ApolloProvider client={apolloClient}>
-    <BrowserRouter>
+    <BrowserRouter basename="/p">
       <Switch>
         <Route
-          // exact
+          exact
           path="/"
           component={(props) =>
             utility.navigator.cookie.has('token') && utility.navigator.cookie.has('user') ? (
@@ -70,7 +70,7 @@ const Routes = () => (
           }
         />
         <Route
-          // exact
+          exact
           path="/signup"
           component={(props) =>
             utility.navigator.cookie.has('token') && utility.navigator.cookie.has('user') ? (
@@ -81,7 +81,7 @@ const Routes = () => (
           }
         />
         <Route
-          // exact
+          exact
           path="/signin"
           component={(props) =>
             utility.navigator.cookie.has('token') && utility.navigator.cookie.has('user') ? (

@@ -5,6 +5,8 @@ const path = require('path'),
   express = require('express'),
   awsServerlessExpress = require('aws-serverless-express');
 
+const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware');
+
 const app = express(),
   mimeTypes = [
     'application/javascript',
@@ -31,6 +33,12 @@ const app = express(),
     'text/text',
     'text/xml',
   ];
+
+app.use(awsServerlessExpressMiddleware.eventContext());
+
+app.get('/event', (req, res) => {
+  res.json(req.apiGateway.event);
+});
 
 // https://expressjs.com/pt-br/starter/static-files.html
 app.use('/assets', express.static(path.join(__dirname, '../www/assets')));
