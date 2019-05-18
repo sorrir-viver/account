@@ -117,7 +117,7 @@ export default function(props) {
         <Col span={24} style={{ alignItems: 'center', display: 'flex' }}>
           <div style={{ fontSize: '16px' }}>
             <Link to="/">
-              <strong style={{ color: '#1890ff' }}>Account</strong>
+              <strong style={{ color: '#1890ff' }}>Account ;-)</strong>
             </Link>
           </div>
           {user && (
