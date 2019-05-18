@@ -14,9 +14,12 @@ import SignUp from './containers/SignUp';
 import SignIn from './containers/SignIn';
 import Home from './containers/Home';
 
+const BASE_PATH = process.env.BASE_PATH,
+  API_URL = process.env.API_URL;
+
 // https://www.apollographql.com/docs/react/advanced/boost-migration.html#advanced-migration
 const apolloClient = new ApolloClient({
-  uri: 'https://api.sorrir-viver.com.br',
+  uri: API_URL,
   fetchOptions: {
     credentials: 'include',
   },
@@ -52,7 +55,7 @@ const NotFound = () => (
 const Routes = () => (
   // replicação para a validação do estado atual para token + user
   <ApolloProvider client={apolloClient}>
-    <BrowserRouter basename="/p">
+    <BrowserRouter basename={BASE_PATH}>
       <Switch>
         <Route
           exact
