@@ -18,7 +18,7 @@
   "scripts": {
     "start:development": "webpack-dev-server --env development --config ./config/development/webpack.config.js",
     "build:production": "webpack --env production --config ./config/production/webpack.config.js",
-    "deploy:lambda:dev": "npm run build:production && serverless deploy --stage dev --profile bitbucket-pipelines"
+    "deploy:lambda:dev": "npm run build:production && serverless deploy --stage dev"
   },
   "dependencies": {
     "@ciro-maciel/utility": "^0.1.4",
@@ -34,8 +34,6 @@
     "react-dom": "next",
     "react-router-dom": "^4.3.1",
     "react-text-mask": "^5.4.3",
-    "serverless-api-compression": "^1.0.1",
-    "serverless-apigw-binary": "^0.4.4",
     "styled-components": "^4.1.2",
     "whatwg-url": "^7.0.0"
   },
@@ -59,6 +57,8 @@
     "imagemin-webpack": "^4.1.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "progress-bar-webpack-plugin": "^1.11.0",
+    "serverless-api-compression": "^1.0.1",
+    "serverless-apigw-binary": "^0.4.4",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
     "webpack": "^4.19.0",
